@@ -1,0 +1,14 @@
+[package]
+name = "iota_sc_utils"
+version = "0.3.0"
+description = "Provides simple interfaces to IOTA smart contract developers"
+authors = ["Th3B0Y <constantlychanging@pm.me>"]
+license = "MIT"
+keywords = ["iota", "smart-contract", "smartcontract","cryptocurrency"]
+edition = "2018"
+repository = "https://github.com/brunoamancio/IOTA-SC-Utils"
+categories = ["cryptography::cryptocurrencies", "development-tools"]
+
+[dependencies]
+wasmlib = { path = "../wasp/contracts/rust/wasmlib" }
+iota-sc-hname-generator = "1.1.1"
