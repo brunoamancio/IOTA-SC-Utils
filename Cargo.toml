@@ -1,6 +1,6 @@
 [package]
 name = "iota_sc_utils"
-version = "0.8.1"
+version = "0.8.2"
 description = "Provides simple interfaces to IOTA smart contract developers"
 authors = ["Th3B0Y <constantlychanging@pm.me>"]
 license = "MIT"
