@@ -1,6 +1,4 @@
-use wasmlib::{ScHname, ScFuncContext};
-
-use crate::{params, results, generator};
+use crate::{params, results, generator, wasmlib::{ScHname, ScFuncContext}};
 
 pub const NAME_FUNC_IMPLEMENTS : &str  = "implements";
 const HNAME_FUNC_IMPLEMENTS : ScHname  =  generator::generate_schname!("implements");
