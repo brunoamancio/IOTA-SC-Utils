@@ -1,0 +1,1 @@
+pub use iota_sc_hname_generator::*;

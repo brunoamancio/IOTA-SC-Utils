@@ -7,3 +7,4 @@ pub mod results;
 pub mod math;
 pub mod state;
 pub mod interfaces;
+pub mod generator;
