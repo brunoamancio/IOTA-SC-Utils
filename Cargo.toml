@@ -10,5 +10,5 @@ repository = "https://github.com/brunoamancio/IOTA-SC-Utils"
 categories = ["cryptography::cryptocurrencies", "development-tools"]
 
 [dependencies]
-wasmlib = { path = "../wasp/contracts/rust/wasmlib" }
+wasmlib = { git = "https://github.com/brunoamancio/Wasm-lib" }
 iota-sc-hname-generator = "1.1.1"
