@@ -2,7 +2,7 @@
 
 # IOTA-SC-Utils
 
-This toolkit provides simple interfaces to IOTA smart contract developers, as well a modified version of [wasmlib](https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib/docs) with minor changes with added syntax sugar only.
+This toolkit provides simple interfaces to IOTA smart contract developers, as well as a modified version of [wasmlib](https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib/docs) with minor changes with added syntax sugar only.
 
 ## A few samples:
 
