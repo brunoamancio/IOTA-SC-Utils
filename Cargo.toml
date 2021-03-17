@@ -1,7 +1,7 @@
 [package]
 name = "iota_sc_utils"
 version = "0.8.8"
-description = "Provides simple interfaces to IOTA smart contract developers"
+description = "Provides simple interfaces to IOTA smart contract developers, as well a modified version of wasmlib."
 authors = ["Th3B0Y <constantlychanging@pm.me>"]
 license = "MIT"
 keywords = ["iota", "smart-contract", "smartcontract","cryptocurrency"]

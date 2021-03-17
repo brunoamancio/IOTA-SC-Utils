@@ -2,6 +2,7 @@ use wasmlib::*;
 use crate::getter::Getter;
 use crate::getter::PARAMS;
 
+/// Creates a new ScMutableMap instance
 pub fn new() -> ScMutableMap {
     let params = ScMutableMap::new();
     params
@@ -30,7 +31,7 @@ add_impl_pub_fns!(PARAMS, must_get_chain_id, get_chain_id, exists_chain_id, ScCh
 macro_rules! add_impl_adder_pub_fns {
 
     ($add_func_name:ident, $get_func : ident, $param_type : ty) => {
-        /// Tries to get a variable. Returns default value if it can't find it.
+        /// Sets a variable in MutableMap.
         pub fn $add_func_name(key :&str, value : $param_type, mutable_map : &ScMutableMap) {
             let hname_param = mutable_map.$get_func(key);
             hname_param.set_value(value);

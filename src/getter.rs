@@ -1,6 +1,8 @@
 use wasmlib::*;
 
+/// Describes a source of data to be loaded. In this case, from a context's state.
 pub const STATE : &str = "state";
+/// Describes a source of data to be loaded. In this case, from a context's params.
 pub const PARAMS : &str = "params";
 
 macro_rules! add_impl_pub_fns {
@@ -51,6 +53,7 @@ macro_rules! add_all_getter_fns {
     };
 }
 
+/// Defines get and must_get operations for primitive as well as for ISCP properties.
 pub trait Getter {
     add_all_getter_fns!();
 }
@@ -124,6 +127,7 @@ macro_rules! add_impl_getters {
 add_impl_getters!(ScFuncContext);
 add_impl_getters!(ScViewContext);
 
+/// Require the condition is true for the context. Panic if false.
 pub fn require_if_needed<TContext:ScBaseContext>(context : &TContext, condition : bool, error_message : &str) {
     context.require(condition, error_message);
 }

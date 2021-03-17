@@ -9,8 +9,17 @@ pub trait SafeMath {
 
 macro_rules! add_impl {
     ($t:ty) => {
+        /// Adds support for safe math
         impl SafeMath for $t {
-            
+            /// Safe addition. Panics on under/overflows (the contract call stops).
+            /// # Sample 1:
+            /// ```ignore
+            /// let result = a.safe_add(b, ctx);
+            /// ```
+            /// # Sample 2:
+            /// ```ignore
+            /// let result = math::safe_add(a, b, ctx);
+            /// ```
             fn safe_add<TContext : ScBaseContext>(&self, b: &$t, ctx : &TContext) -> $t where Self : Sized {
                 let a_plus_b = self.checked_add(*b);
                 match a_plus_b {
@@ -23,6 +32,15 @@ macro_rules! add_impl {
                 }
             }
 
+            /// Safe subtraction. Panics on under/overflows (the contract call stops).
+            /// # Sample 1:
+            /// ```ignore
+            /// let result = a.safe_sub(b, ctx);
+            /// ```
+            /// # Sample 2:
+            /// ```ignore
+            /// let result = math::safe_sub(a, b, ctx);
+            /// ```
             fn safe_sub<TContext : ScBaseContext>(&self, b: &$t, ctx : &TContext) -> $t where Self : Sized {
                 let a_minus_b = self.checked_sub(*b);
                 match a_minus_b {
@@ -35,6 +53,15 @@ macro_rules! add_impl {
                 }
             }
 
+            /// Safe multiplication. Panics on under/overflows (the contract call stops).
+            /// # Sample 1:
+            /// ```ignore
+            /// let result = a.safe_mul(b, ctx);
+            /// ```
+            /// # Sample 2:
+            /// ```ignore
+            /// let result = math::safe_mul(a, b, ctx);
+            /// ```
             fn safe_mul<TContext : ScBaseContext>(&self, b: &$t, ctx : &TContext) -> $t where Self : Sized {
                 let a_times_b = self.checked_mul(*b);
                 match a_times_b {
@@ -47,6 +74,15 @@ macro_rules! add_impl {
                 }
             }
 
+            /// Safe division. Panics on under/overflows (the contract call stops).
+            /// # Sample 1:
+            /// ```ignore
+            /// let result = a.safe_div(b, ctx);
+            /// ```
+            /// # Sample 2:
+            /// ```ignore
+            /// let result = math::safe_div(a, b, ctx);
+            /// ```
             fn safe_div<TContext : ScBaseContext>(&self, b: &$t, ctx : &TContext) -> $t where Self : Sized {
                 let a_divided_by_b = self.checked_div(*b);
                 match a_divided_by_b {

@@ -46,7 +46,7 @@ add_impl_pub_setter_fns!(set_chain_id, get_chain_id, &ScChainId);
 
 macro_rules! add_impl_pub_getter_fns {
     ($must_get_func:ident, $get_func:ident, $exists_func_name:ident, $return_type:ty) => {
-        
+        /// Tries to get a parameter. Panics if it can't find it.
         pub fn $must_get_func(param_name : &str, immutablemap : ScImmutableMap) -> $return_type {
             let param = immutablemap.$get_func(param_name);
             if !param.exists() {
@@ -55,10 +55,12 @@ macro_rules! add_impl_pub_getter_fns {
             param.value()
         }
         
+        /// Tries to get a parameter. Returns default value if it can't find it.
         pub fn $get_func(param_name : &str, immutablemap : ScImmutableMap) -> $return_type {
             immutablemap.$get_func(param_name).value()
         }
 
+        /// Checks if a parameter exists. Returns true if it exists.
         pub fn $exists_func_name(param_name : &str, immutablemap : ScImmutableMap) -> bool {
             immutablemap.$get_func(param_name).exists()
         }
@@ -70,6 +72,7 @@ add_impl_pub_getter_fns!(must_get_string, get_string, exists_string, String);
 add_impl_pub_getter_fns!(must_get_int64, get_int64,exists_int64, i64);
 add_impl_pub_getter_fns!(must_get_bytes, get_bytes,exists_bytes, Vec<u8>);
 
+/// Tries to get a bool parameter. Panics if it can't find it.
 pub fn must_get_bool(param_name : &str, immutablemap : ScImmutableMap) -> bool {
     let param = immutablemap.get_bytes(param_name);
     if !param.exists() {
@@ -79,6 +82,7 @@ pub fn must_get_bool(param_name : &str, immutablemap : ScImmutableMap) -> bool {
     let bool_value = to_bool(param_value);
     bool_value
 }
+/// Tries to get a bool parameter. Returns default value if it can't find it.
 pub fn get_bool(param_name : &str, immutablemap : ScImmutableMap) -> bool {
     let param_value = immutablemap.get_bytes(param_name).value();
     let bool_value = to_bool(param_value);
@@ -91,6 +95,7 @@ fn to_bool(bytes_vector : Vec<u8>) -> bool {
     }
 }
 
+/// Checks if a bool parameter exists. Returns true if it exists.
 pub fn exists_bool(param_name : &str, immutablemap : ScImmutableMap) -> bool {
     immutablemap.get_bytes(param_name).exists()
 }
