@@ -4,6 +4,12 @@
 
 This toolkit provides simple interfaces to IOTA smart contract developers, as well as a modified version of [wasmlib](https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib/docs) with minor changes with added syntax sugar only.
 
+## Add to Cargo.toml (ensure you add the latest version)
+```
+[dependencies]
+iota_sc_utils = { git = "https://github.com/brunoamancio/IOTA-SC-Utils", tag = "v0.8.8"}
+```
+
 ## A few samples:
 
 ### Access: Verify access rights.
