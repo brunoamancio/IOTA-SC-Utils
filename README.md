@@ -147,7 +147,7 @@ let hname2 : ScHname(0x0000002);
 let xor : ScHname = hname1 ^ hname2;
 ```
 
-Usage sample:
+Usage sample of the integrated wasmlib:
 ```
 use iota_sc_utils::wasmlib::{ScExports, ScViewContext};
 
