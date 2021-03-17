@@ -139,8 +139,8 @@ const HNAME_MY_FUNC : ScHname = generator::generate_schname!("my_func");
 ---
 
 ### Wasmlib
-[Modified](https://github.com/brunoamancio/Wasm-lib) version of IOTA Foundation's [wasmlib](https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib). There are no logic changes, only additions to support syntax sugar. Current feature:
-- Support for seemless xor operation between ScHnames with:
+[Modified](https://github.com/brunoamancio/Wasm-lib) version of IOTA Foundation's [wasmlib](https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib). There are no logic changes, only additions to support syntax sugar. The reason is that, unfortunately, IOTA Foundation takes long to evaluate pull requests to their repository, even for small additions. Current feature:
+- Support for seemless xor operation between ScHnames with (Pending PR on the [official repo](https://github.com/iotaledger/wasp/pull/132)):
 ```
 let hname1 : ScHname(0x0000001);
 let hname2 : ScHname(0x0000002);
