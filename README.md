@@ -73,7 +73,7 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
 - Values returned from calls to other contracts.
 ```
 fn my_iota_sc_function(ctx : &ScFuncContext){
-    let call_result : ScImmutableMap = let result = ctx.call(<hname_contract>, <hname_func>, None);
+    let call_result : ScImmutableMap = ctx.call(<hname_contract>, <hname_func>, None);
     
     /// Tries to get a returned value. Panics if it can't find it.
     let my_string1 = results::must_get_string("my_returned_string_var_name1", call_result);
