@@ -38,7 +38,7 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
     let param_exists : bool = params::exists_string("param_name3", ctx);
 }
 ```
-**Supports:** String, int64, bytes, ScAgendId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
+**Supports:** String, int64, bytes, ScAgentId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
 
 ---
 
@@ -55,7 +55,7 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
     let variable_exists : bool = state::exists_string("variable_name3", ctx);
 }
 ```
-**Supports:** String, int64, bytes, ScAgendId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
+**Supports:** String, int64, bytes, ScAgentId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
 
 ---
 
