@@ -20,6 +20,9 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
 
     /// Panics if caller is not the chain owner
     access::caller_must_be_chain_owner(ctx);
+
+    /// Panics if caller is not the contract itself
+    access::caller_must_be_contract_itself(ctx);
 }
 ```
 
