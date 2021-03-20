@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - feature/setup-docs
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
