@@ -1,0 +1,33 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - feature/setup-docs
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: 'latest'
+
+      - run: mdbook build docs
+      - name: Install required packages (Ubuntu)
+        run: |
+          sudo apt-get update
+          sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+
+      - run: cargo doc --document-private-items --no-deps --release
+      - run: cp -r target/doc book/docs
+
+      - name: Deploy
+        uses: iotaledger/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs/book
