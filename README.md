@@ -96,6 +96,9 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
 
 ```
 fn my_iota_sc_function(ctx : &ScFuncContext){
+    // Panics if amount of attached tokens of 'color' is less than 'minimum_balance'.
+    incoming::require_balance(10, &ScColor::IOTA, ctx);
+
     /// Returns the amount of tokens of 'color' attached to the call. In this case, incoming amount of IOTA tokens.
     let incoming_balance : i64 = incoming::balance(&ScColor::IOTA, ctx);
 
