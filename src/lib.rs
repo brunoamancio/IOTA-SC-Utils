@@ -12,6 +12,8 @@ pub mod params;
 pub mod results;
 ///  Syntax sugar to work with context state.
 pub mod state;
+/// Syntax sugar to work with incoming transfers.
+pub mod incoming;
 
 ///  Keeps information relevant to standards such as TIP-100.
 pub mod interfaces;

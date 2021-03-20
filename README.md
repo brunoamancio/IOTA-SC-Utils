@@ -92,6 +92,20 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
 
 ---
 
+### Incoming: Tokens attached to the call
+
+```
+fn my_iota_sc_function(ctx : &ScFuncContext){
+    /// Returns the amount of tokens of 'color' attached to the call. In this case, incoming amount of IOTA tokens.
+    let incoming_balance : i64 = incoming::balance(&ScColor::IOTA, ctx);
+
+    /// Returns a list of colors of the tokens attached to the call.
+    let incoming_colors : ScImmutableColorArray = incoming::colors(ctx);
+}
+```
+
+---
+
 ### SafeMath: Safe math operations which panic on under/overflows (stops SC execution)
 - Addition:
 ```
