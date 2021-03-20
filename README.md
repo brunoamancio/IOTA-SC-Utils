@@ -41,7 +41,7 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
     let param_exists : bool = params::exists_string("param_name3", ctx);
 }
 ```
-**Supports:** String, int64, bytes, ScAgendId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
+**Supports:** String, int64, bytes, ScAgentId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
 
 ---
 
@@ -58,7 +58,7 @@ fn my_iota_sc_function(ctx : &ScFuncContext){
     let variable_exists : bool = state::exists_string("variable_name3", ctx);
 }
 ```
-**Supports:** String, int64, bytes, ScAgendId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
+**Supports:** String, int64, bytes, ScAgentId, ScAddress, ScRequestId, ScHname, ScHash, ScContractId, ScColor, and ScChainId.
 
 ---
 
@@ -103,7 +103,7 @@ let added_value2 = math::safe_add(a, 2, ctx);
 ```
 - Subtraction:
 ```
-let a := 1_i64;
+let a = 1_i64;
 // Syntax 1
 let sub_value1 = a.safe_sub(2, ctx);
 // Syntax 2
@@ -111,7 +111,7 @@ let sub_value2 = math::safe_sub(a, 2, ctx);
 ```
 - Multiplication:
 ```
-let a := 1_i64;
+let a = 1_i64;
 // Syntax 1
 let mul_value1 = a.safe_mul(2, ctx);
 // Syntax 2
@@ -119,7 +119,7 @@ let mul_value2 = math::safe_mul(a, 2, ctx);
 ```
 - Division:
 ```
-let a := 1_i64;
+let a = 1_i64;
 // Syntax 1
 let div_value1 = a.safe_div(2, ctx);
 // Syntax 2
