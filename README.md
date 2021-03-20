@@ -7,7 +7,7 @@ This toolkit provides simple interfaces to IOTA smart contract developers, as we
 ## Add to Cargo.toml (ensure you add the latest version)
 ```
 [dependencies]
-iota_sc_utils = { git = "https://github.com/brunoamancio/IOTA-SC-Utils", tag = "v0.8.9"}
+iota_sc_utils = { git = "https://github.com/brunoamancio/IOTA-SC-Utils", tag = "v0.8.91"}
 ```
 
 ## A few samples:
