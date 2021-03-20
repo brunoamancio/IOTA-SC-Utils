@@ -1,4 +1,4 @@
 # Summary
 
 - [👋 Welcome](./welcome.md)
-- [Rust Docs](./docs.md)
+- [Rust Docs](./documentation.md)
