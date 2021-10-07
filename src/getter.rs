@@ -42,14 +42,13 @@ macro_rules! add_all_getter_fns {
         add_all_getter_fns!(must_get_bytes, get_bytes, exists_bytes, Vec<u8>);
 
         // ISCP types
-        add_all_getter_fns!(must_get_agent_id, get_agent_id, exists_agent_id, ScAgentId);
+        add_all_getter_fns!(must_get_agent_id, get_agent_id, exists_agent_id,  ScAgentID);
         add_all_getter_fns!(must_get_address, get_address, exists_address, ScAddress);
-        add_all_getter_fns!(must_get_request_id, get_request_id, exists_request_id, ScRequestId);
+        add_all_getter_fns!(must_get_request_id, get_request_id, exists_request_id, ScRequestID);
         add_all_getter_fns!(must_get_hname, get_hname, exists_hname, ScHname);
         add_all_getter_fns!(must_get_hash, get_hash, exists_hash, ScHash);
-        add_all_getter_fns!(must_get_contract_id, get_contract_id, exists_contract_id, ScContractId);
         add_all_getter_fns!(must_get_color, get_color, exists_color, ScColor);
-        add_all_getter_fns!(must_get_chain_id, get_chain_id, exists_chain_id, ScChainId);
+        add_all_getter_fns!(must_get_chain_id, get_chain_id, exists_chain_id, ScChainID);
     };
 }
 
@@ -74,7 +73,7 @@ macro_rules! add_impl_getters {
                     crate::getter::require_if_needed(self, param.exists(), &format!("parameter {} not found", variable_name));
                     param.value()
                 },
-                _ => panic!(format!("Source {} not implemented", source)),
+                _ => panic!("Source {} not implemented", source),
             }
         }
 
@@ -87,7 +86,7 @@ macro_rules! add_impl_getters {
                 crate::getter::PARAMS => {
                     self.params().$get_func_name(variable_name).value()
                 },
-                _ => panic!(format!("Source {} not implemented", source)),
+                _ => panic!("Source {} not implemented", source),
             }
         }
 
@@ -99,7 +98,7 @@ macro_rules! add_impl_getters {
                 crate::getter::PARAMS => {
                     self.params().$get_func_name(variable_name).exists()
                 },
-                _ => panic!(format!("Source {} not implemented", source)),
+                _ => panic!("Source {} not implemented", source),
             }
         }
     };
@@ -112,17 +111,16 @@ macro_rules! add_impl_getters {
             add_impl_getters!(must_get_bytes, get_bytes, exists_bytes, Vec<u8>);
         
             // ISCP types
-            add_impl_getters!(must_get_agent_id, get_agent_id, exists_agent_id, ScAgentId);
+            add_impl_getters!(must_get_agent_id, get_agent_id, exists_agent_id, ScAgentID);
             add_impl_getters!(must_get_address, get_address, exists_address, ScAddress);
-            add_impl_getters!(must_get_request_id, get_request_id, exists_request_id, ScRequestId);
+            add_impl_getters!(must_get_request_id, get_request_id, exists_request_id, ScRequestID);
             add_impl_getters!(must_get_hname, get_hname, exists_hname, ScHname);
             add_impl_getters!(must_get_hash, get_hash, exists_hash, ScHash);
-            add_impl_getters!(must_get_contract_id, get_contract_id, exists_contract_id, ScContractId);
             add_impl_getters!(must_get_color, get_color, exists_color, ScColor);
-            add_impl_getters!(must_get_chain_id, get_chain_id, exists_chain_id, ScChainId);
+            add_impl_getters!(must_get_chain_id, get_chain_id, exists_chain_id, ScChainID);
         }
     };
-}
+}   
 
 add_impl_getters!(ScFuncContext);
 add_impl_getters!(ScViewContext);

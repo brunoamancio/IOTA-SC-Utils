@@ -27,7 +27,7 @@ macro_rules! add_impl {
                     _ => {
                         const INVALID_ADDITION : &str = "Invalid addition operation";
                         ctx.panic(INVALID_ADDITION);
-                        panic!(INVALID_ADDITION)
+                        panic!("{}", INVALID_ADDITION)
                     },
                 }
             }
@@ -48,7 +48,7 @@ macro_rules! add_impl {
                     _ => {
                         const INVALID_SUBTRACTION : &str = "Invalid subtraction operation";
                         ctx.panic(INVALID_SUBTRACTION);
-                        panic!(INVALID_SUBTRACTION)
+                        panic!("{}", INVALID_SUBTRACTION)
                     },
                 }
             }
@@ -69,7 +69,7 @@ macro_rules! add_impl {
                     _ => {
                         const INVALID_MULTIPLICATION : &str = "Invalid multiplication operation";
                         ctx.panic(INVALID_MULTIPLICATION);
-                        panic!(INVALID_MULTIPLICATION)
+                        panic!("{}", INVALID_MULTIPLICATION)
                     },
                 }
             }
@@ -90,7 +90,7 @@ macro_rules! add_impl {
                     None => {
                         const INVALID_DIVISION : &str = "Invalid division operation. Reason: Division by zero.";
                         ctx.panic(INVALID_DIVISION);
-                        panic!(INVALID_DIVISION)
+                        panic!("{}", INVALID_DIVISION)
                     }
                 }
             }

@@ -33,14 +33,13 @@ fn to_u8(param_value : bool) -> Vec<u8> {
 
 
 // ISCP Types
-add_impl_pub_setter_fns!(set_agent_id, get_agent_id, &ScAgentId);
+add_impl_pub_setter_fns!(set_agent_id, get_agent_id, &ScAgentID);
 add_impl_pub_setter_fns!(set_address, get_address, &ScAddress);
-add_impl_pub_setter_fns!(set_request_id, get_request_id, &ScRequestId);
+add_impl_pub_setter_fns!(set_request_id, get_request_id, &ScRequestID);
 add_impl_pub_setter_fns!(set_hname, get_hname, ScHname);
 add_impl_pub_setter_fns!(set_hash, get_hash, &ScHash);
-add_impl_pub_setter_fns!(set_contract_id, get_contract_id, &ScContractId);
 add_impl_pub_setter_fns!(set_color, get_color, &ScColor);
-add_impl_pub_setter_fns!(set_chain_id, get_chain_id, &ScChainId);
+add_impl_pub_setter_fns!(set_chain_id, get_chain_id, &ScChainID);
 
 // ---------------------------    Getter functions    -------------------------------------
 
@@ -50,7 +49,7 @@ macro_rules! add_impl_pub_getter_fns {
         pub fn $must_get_func(param_name : &str, immutablemap : ScImmutableMap) -> $return_type {
             let param = immutablemap.$get_func(param_name);
             if !param.exists() {
-                panic!(format!("result {} not found", param_name));
+                panic!("result {} not found", param_name);
             }
             param.value()
         }
@@ -76,7 +75,7 @@ add_impl_pub_getter_fns!(must_get_bytes, get_bytes,exists_bytes, Vec<u8>);
 pub fn must_get_bool(param_name : &str, immutablemap : ScImmutableMap) -> bool {
     let param = immutablemap.get_bytes(param_name);
     if !param.exists() {
-        panic!(format!("result {} not found", param_name));
+        panic!("result {} not found", param_name);
     }
     let param_value = param.value();
     let bool_value = to_bool(param_value);
@@ -102,11 +101,10 @@ pub fn exists_bool(param_name : &str, immutablemap : ScImmutableMap) -> bool {
 
 
 // ISCP Types
-add_impl_pub_getter_fns!(must_get_agent_id, get_agent_id, exists_agent_id, ScAgentId);
+add_impl_pub_getter_fns!(must_get_agent_id, get_agent_id, exists_agent_id, ScAgentID);
 add_impl_pub_getter_fns!(must_get_address, get_address, exists_address, ScAddress);
-add_impl_pub_getter_fns!(must_get_request_id, get_request_id, exists_request_id, ScRequestId);
+add_impl_pub_getter_fns!(must_get_request_id, get_request_id, exists_request_id, ScRequestID);
 add_impl_pub_getter_fns!(must_get_hname, get_hname, exists_hname, ScHname);
 add_impl_pub_getter_fns!(must_get_hash, get_hash, exists_hash, ScHash);
-add_impl_pub_getter_fns!(must_get_contract_id, get_contract_id, exists_contract_id, ScContractId);
 add_impl_pub_getter_fns!(must_get_color, get_color, exists_color, ScColor);
-add_impl_pub_getter_fns!(must_get_chain_id, get_chain_id, exists_chain_id, ScChainId);
+add_impl_pub_getter_fns!(must_get_chain_id, get_chain_id, exists_chain_id, ScChainID);

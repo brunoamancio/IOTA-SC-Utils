@@ -17,6 +17,6 @@ pub fn caller_must_be_chain_owner(ctx: &ScFuncContext){
 /// Panics if caller is not the contract itself
 pub fn caller_must_be_contract_itself(ctx: &ScFuncContext){
     let caller_agent_id = ctx.caller();
-    let contract_itself_agent_id = ctx.contract_id().as_agent_id();
+    let contract_itself_agent_id = ctx.account_id();
     ctx.require(caller_agent_id == contract_itself_agent_id, "Only the contract itself may call this function!");
 }
