@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["generate_hash","Calculates hash of the input string and generates the output: “0x123ABC”"],["generate_schname","Calculates hash of the input string and generates the output: “ScHname(<generated hash>);”"]]});

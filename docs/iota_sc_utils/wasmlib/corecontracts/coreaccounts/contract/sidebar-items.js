@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccountsCall",""],["BalanceCall",""],["DepositCall",""],["GetAccountNonceCall",""],["HarvestCall",""],["ScFuncs",""],["TotalAssetsCall",""],["WithdrawCall",""]]});

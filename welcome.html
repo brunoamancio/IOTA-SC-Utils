@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>👋 Welcome - IOTA-SC-Utils Documentation</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html" class="active"><strong aria-hidden="true">1.</strong> 👋 Welcome</a></li><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">2.</strong> Rust Docs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">IOTA-SC-Utils Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="iota-sc-utils"><a class="header" href="#iota-sc-utils">IOTA-SC-Utils</a></h1>
+<p>This toolkit provides simple interfaces to IOTA smart contract developers, as well as a modified version of <a href="https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib/docs">wasmlib</a> with minor changes with added syntax sugar only.</p>
+<h2 id="add-to-cargotoml-ensure-you-add-the-latest-version"><a class="header" href="#add-to-cargotoml-ensure-you-add-the-latest-version">Add to Cargo.toml (ensure you add the latest version)</a></h2>
+<pre><code>[dependencies]
+iota_sc_utils = { git = &quot;https://github.com/brunoamancio/IOTA-SC-Utils&quot;, tag = &quot;v0.8.94&quot;}
+</code></pre>
+<h2 id="a-few-samples"><a class="header" href="#a-few-samples">A few samples:</a></h2>
+<h3 id="access-verify-access-rights"><a class="header" href="#access-verify-access-rights">Access: Verify access rights.</a></h3>
+<pre><code>fn my_iota_sc_function(ctx : &amp;ScFuncContext){
+    /// Panics if caller is not the contract creator
+    access::caller_must_be_contract_creator(ctx);
+
+    /// Panics if caller is not the chain owner
+    access::caller_must_be_chain_owner(ctx);
+
+    /// Panics if caller is not the contract itself
+    access::caller_must_be_contract_itself(ctx);
+}
+</code></pre>
+<hr />
+<h3 id="params-parameters-passed-when-calling-sc-function"><a class="header" href="#params-parameters-passed-when-calling-sc-function">Params: Parameters passed when calling SC function.</a></h3>
+<pre><code>fn my_iota_sc_function(ctx : &amp;ScFuncContext){
+    // Tries to get a parameter. Panics if it can't find it.
+    let my_input_param1 : String = params::must_get_string(&quot;param_name1&quot;, ctx);
+
+    // Tries to get a parameter. Returns default value if it can't find it.
+    let my_input_param2 : String = params::get_string(&quot;param_name2&quot;, ctx);
+
+    // Checks if a parameter exists. Returns true if it exists.
+    let param_exists : bool = params::exists_string(&quot;param_name3&quot;, ctx);
+}
+</code></pre>
+<p><strong>Supports:</strong> String, int64, bytes, ScAgentID, ScAddress, ScRequestID, ScHname, ScHash, ScColor, and ScChainID.</p>
+<hr />
+<h3 id="state-variables-saved-in-sc-state"><a class="header" href="#state-variables-saved-in-sc-state">State: Variables saved in SC state.</a></h3>
+<pre><code>fn my_iota_sc_function(ctx : &amp;ScFuncContext){
+    // Tries to get a variable. Panics if it can't find it.
+    let my_variable1 : String = state::must_get_string(&quot;variable_name1&quot;, ctx);
+
+    // Tries to get a variable. Returns default value if it can't find it.
+    let my_variable2 : String = state::get_string(&quot;variable_name2&quot;, ctx);
+
+    // Checks if a variable exists. Returns true if it exists.
+    let variable_exists : bool = state::exists_string(&quot;variable_name3&quot;, ctx);
+}
+</code></pre>
+<p><strong>Supports:</strong> String, int64, bytes, ScAgentID, ScAddress, ScRequestID, ScHname, ScHash, ScColor, and ScChainID.</p>
+<hr />
+<h3 id="results"><a class="header" href="#results">Results:</a></h3>
+<ul>
+<li>Values returned to sc function caller after the request is processed.</li>
+</ul>
+<pre><code>fn my_iota_sc_function(ctx : &amp;ScFuncContext){
+    // Sets value in response structure
+    results::set_string(&quot;my_returned_string_var_name&quot;, &quot;my string value&quot;, ctx);
+
+    // Sets value in response structure
+    results::set_int64(&quot;my_returned_i64_var_name&quot;, 10_i64, ctx);
+}
+</code></pre>
+<ul>
+<li>Values returned from calls to other contracts.</li>
+</ul>
+<pre><code>fn my_iota_sc_function(ctx : &amp;ScFuncContext){
+    let call_result : ScImmutableMap = ctx.call(&lt;hname_contract&gt;, &lt;hname_func&gt;, None);
+    
+    /// Tries to get a returned value. Panics if it can't find it.
+    let my_string1 = results::must_get_string(&quot;my_returned_string_var_name1&quot;, call_result);
+
+    /// Tries to get a parameter. Returns default value if it can't find it.
+    let my_string2 = results::get_string(&quot;my_returned_string_var_name2&quot;, call_result);
+
+    /// Checks if a parameter exists. Returns true if it exists.
+    let returned_variable_exists : bool = results::exists_string(&quot;my_returned_string_var_name3&quot;, call_result);
+}
+</code></pre>
+<p><strong>Supports:</strong> String, int64, bytes, bool, ScAgendID, ScAddress, ScRequestID, ScHname, ScHash, ScColor, and ScChainID.</p>
+<hr />
+<h3 id="incoming-tokens-attached-to-the-call"><a class="header" href="#incoming-tokens-attached-to-the-call">Incoming: Tokens attached to the call</a></h3>
+<pre><code>fn my_iota_sc_function(ctx : &amp;ScFuncContext){
+    // Panics if amount of attached tokens of 'color' is less than 'minimum_balance'.
+    incoming::require_balance(10, &amp;ScColor::IOTA, ctx);
+
+    /// Returns the amount of tokens of 'color' attached to the call. In this case, incoming amount of IOTA tokens.
+    let incoming_balance : i64 = incoming::balance(&amp;ScColor::IOTA, ctx);
+
+    /// Returns a list of colors of the tokens attached to the call.
+    let incoming_colors : ScImmutableColorArray = incoming::colors(ctx);
+}
+</code></pre>
+<hr />
+<h3 id="safemath-safe-math-operations-which-panic-on-underoverflows-stops-sc-execution"><a class="header" href="#safemath-safe-math-operations-which-panic-on-underoverflows-stops-sc-execution">SafeMath: Safe math operations which panic on under/overflows (stops SC execution)</a></h3>
+<ul>
+<li>Addition:</li>
+</ul>
+<pre><code>let a := 1_i64;
+// Syntax 1
+let added_value1 = a.safe_add(2, ctx);
+// Syntax 2
+let added_value2 = math::safe_add(a, 2, ctx);
+</code></pre>
+<ul>
+<li>Subtraction:</li>
+</ul>
+<pre><code>let a = 1_i64;
+// Syntax 1
+let sub_value1 = a.safe_sub(2, ctx);
+// Syntax 2
+let sub_value2 = math::safe_sub(a, 2, ctx);
+</code></pre>
+<ul>
+<li>Multiplication:</li>
+</ul>
+<pre><code>let a = 1_i64;
+// Syntax 1
+let mul_value1 = a.safe_mul(2, ctx);
+// Syntax 2
+let mul_value2 = math::safe_mul(a, 2, ctx);
+</code></pre>
+<ul>
+<li>Division:</li>
+</ul>
+<pre><code>let a = 1_i64;
+// Syntax 1
+let div_value1 = a.safe_div(2, ctx);
+// Syntax 2
+let div_value2 = math::safe_div(a, 2, ctx);
+</code></pre>
+<hr />
+<p><strong>Supports:</strong> i8, i16, i32, i64, isize, u8, u16, u32, u64, usize;</p>
+<h3 id="hname-generator"><a class="header" href="#hname-generator">Hname generator</a></h3>
+<p>Generates Schnames and/or u32 representation thereof in compile-time. 
+Sample:</p>
+<pre><code>use iota_sc_utils::generator;
+// Generated in compile-time!
+const HNAME_MY_FUNC : ScHname = generator::generate_schname!(&quot;my_func&quot;);
+</code></pre>
+<ul>
+<li>Github repository: https://github.com/brunoamancio/IOTA-SC-HName-Generator </li>
+<li>Documentation: https://crates.io/crates/iota-sc-hname-generator</li>
+</ul>
+<hr />
+<h3 id="wasmlib"><a class="header" href="#wasmlib">Wasmlib</a></h3>
+<p><a href="https://github.com/brunoamancio/Wasm-lib">Modified</a> version of IOTA Foundation's <a href="https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib">wasmlib</a>. There are no logic changes, only additions to support syntax sugar. The reason is that, unfortunately, IOTA Foundation takes long to evaluate pull requests to their repository, even for small additions. Current feature:</p>
+<ul>
+<li>Support for seemless xor operation between ScHnames with (Pending PR on the <a href="https://github.com/iotaledger/wasp/pull/132">official repo</a>):</li>
+</ul>
+<pre><code>let hname1 : ScHname(0x0000001);
+let hname2 : ScHname(0x0000002);
+let xor : ScHname = hname1 ^ hname2;
+</code></pre>
+<p>Usage sample of the integrated wasmlib:</p>
+<pre><code>use iota_sc_utils::wasmlib::{ScExports, ScViewContext};
+
+#[no_mangle]
+pub fn on_load() {
+    let exports = ScExports::new();
+    exports.add_view(&quot;hello_view&quot;, hello_view);
+}
+
+pub fn hello_view(ctx : &amp;ScViewContext) {
+    // Hello!
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="next" href="documentation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="next" href="documentation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

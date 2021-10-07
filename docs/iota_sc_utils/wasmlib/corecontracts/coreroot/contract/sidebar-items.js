@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeployContractCall",""],["FindContractCall",""],["GetContractRecordsCall",""],["GrantDeployPermissionCall",""],["RevokeDeployPermissionCall",""],["ScFuncs",""]]});
