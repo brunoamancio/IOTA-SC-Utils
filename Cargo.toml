@@ -1,6 +1,6 @@
 [package]
 name = "iota_sc_utils"
-version = "0.8.92"
+version = "0.8.93"
 description = "Provides simple interfaces to IOTA smart contract developers, as well a modified version of wasmlib."
 authors = ["Th3B0Y <constantlychanging@pm.me>"]
 license = "MIT"
@@ -10,5 +10,5 @@ repository = "https://github.com/brunoamancio/IOTA-SC-Utils"
 categories = ["cryptography::cryptocurrencies", "development-tools"]
 
 [dependencies]
-wasmlib = { git = "https://github.com/brunoamancio/Wasm-lib", tag="v0.1.0", version="0.1.0" }
+wasmlib = { git = "https://github.com/brunoamancio/Wasm-lib", tag="v0.1.2", version="0.1.2" }
 iota-sc-hname-generator = "1.1.6"
