@@ -20,12 +20,12 @@ pub mod interfaces;
 
 /// Responsible for code generation.
 /// Integrated tool responsible for generating hashes in compile-time. 
-/// Documentation: https://crates.io/crates/iota-sc-hname-generator
-/// Github repository: https://github.com/brunoamancio/IOTA-SC-HName-Generator
+/// Documentation: `<https://crates.io/crates/iota-sc-hname-generator>`
+/// Github repository: `<https://github.com/brunoamancio/IOTA-SC-HName-Generator>`
 pub mod generator;
 
 /// Integrated tool responsible for communication with ISCP's vm. This is a modified version of the original IF's wasmlib.
 /// Differences are kept minimal and only exist if they provide simpler interface, nothing else. 
-/// Documentation: https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib/docs
-/// Github repository: https://github.com/brunoamancio/IOTA-SC-HName-Generator
+/// Documentation: `<https://github.com/iotaledger/wasp/tree/master/contracts/rust/wasmlib/docs>`
+/// Github repository: `<https://github.com/brunoamancio/IOTA-SC-HName-Generator>`
 pub mod wasmlib;
