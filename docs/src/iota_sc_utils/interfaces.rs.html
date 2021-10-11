@@ -43,18 +43,18 @@
 <span class="doccomment">/// Hash of TIP-100 Interface.</span>
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">HNAME_INTERFACE_TIP_100</span> : <span class="ident">ScHname</span> <span class="op">=</span> <span class="macro">generator::generate_schname!</span>(<span class="string">&quot;implements(ScHname)-&gt;bool&quot;</span>);
 
-<span class="doccomment">/// Function which calls the contract with hname `hname_contract` and checks if it implements interface `hname_interface`.</span>
-<span class="doccomment">/// # Sample:</span>
-<span class="doccomment">/// ```ignore</span>
-<span class="doccomment">/// fn my_sc_view(ctx : &amp;ScViewContext) {</span>
-<span class="doccomment">///     let hname_external_contract : ScHname = ScHname(\&lt;contract hash\&gt;);</span>
-<span class="doccomment">///     let hname_interface_knows_how_to_bark : ScHname = ScHname(\&lt;interface hash\&gt;);</span>
-<span class="doccomment">///     let external_contract_knows_how_to_bark : bool = interfaces::implements(hname_external_contract, hname_interface_knows_how_to_bark);</span>
-<span class="doccomment">///     if external_contract_knows_how_to_bark {</span>
-<span class="doccomment">///         // woof</span>
-<span class="doccomment">///     }</span>
-<span class="doccomment">/// }</span>
-<span class="doccomment">/// ```</span>
+<span class="doccomment">/**
+Function which calls the contract with hname `hname_contract` and checks if it implements interface `hname_interface`.
+# Sample:
+fn my_sc_view(ctx : &amp;ScViewContext) {
+    let hname_external_contract : ScHname = ScHname(\&lt;contract hash\&gt;);
+    let hname_interface_knows_how_to_bark : ScHname = ScHname(\&lt;interface hash\&gt;);
+    let external_contract_knows_how_to_bark : bool = interfaces::implements(hname_external_contract, hname_interface_knows_how_to_bark);
+    if external_contract_knows_how_to_bark {
+        // woof
+    }
+}
+*/</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">implements</span>(<span class="ident">hname_contract</span> : <span class="ident">ScHname</span>, <span class="ident">hname_interface</span> : <span class="ident">ScHname</span>, <span class="ident">ctx</span> : <span class="kw-2">&amp;</span><span class="ident">ScViewContext</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span> {
     <span class="kw">let</span> <span class="ident">input_params</span> <span class="op">=</span> <span class="ident">params::new</span>();
     <span class="ident">params::add_hname</span>(<span class="ident">INTERFACE_TIP_100</span>, <span class="ident">hname_interface</span>, <span class="kw-2">&amp;</span><span class="ident">input_params</span>);
